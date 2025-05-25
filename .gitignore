@@ -8,6 +8,11 @@ __pycache__/
 
 # custom
 .venv/
+# .gitignore
+*.egg-info/
+build/
+dist/
+
 
 # Distribution / packaging
 .Python
