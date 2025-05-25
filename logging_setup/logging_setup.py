@@ -58,11 +58,11 @@ class SQLiteHandler(Handler):
 
 def setup_logger(name="app", db_path='app_logs.db', level=logging.DEBUG, max_db_size_mb: int = 5, retention_days: int = 90,):
     logger = logging.getLogger(name)
-    logger.setLevel(level=level)
     logger.handlers.clear()  # Avoid duplicates on reruns in Streamlit
 
     # Console Handler
     console_handler = logging.StreamHandler()
+    console_handler.setLevel(level)
     console_handler.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(filename)s: %(message)s'))
     
     # SQLite Handler
